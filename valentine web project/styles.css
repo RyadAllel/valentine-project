@@ -1,0 +1,292 @@
+/* styles.css */
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Full-Screen Gradient Background */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    z-index: -1;
+}
+
+/* Animated Shapes */
+.shape {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+.shape1 { top: 10%; left: 20%; width: 150px; height: 150px; animation-duration: 8s; }
+.shape2 { top: 50%; left: 70%; width: 100px; height: 100px; animation-duration: 10s; }
+.shape3 { top: 70%; left: 40%; width: 200px; height: 200px; animation-duration: 12s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Content Container */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 90%;
+    max-width: 800px;
+    padding-bottom: 60px; /* Space for back button */
+}
+
+/* Header Styling */
+.main-header {
+    font-size: 5rem; /* Increased from 4rem */
+    margin: 0 0 30px 0 !important; /* Added more bottom spacing */
+    font-family: 'Dancing Script', cursive !important;
+    color: #ff6f61;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-in-out;
+    line-height: 1.2; /* Better vertical spacing */
+    padding: 0 20px; /* Prevent text from touching edges */
+}
+
+/* Image Styling (Home Page) */
+.romantic-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    border: 4px solid #ff6f61;
+    box-shadow: 0 4px 15px rgba(255, 111, 97, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.romantic-image:hover {
+    transform: scale(1.05);
+}
+
+/* Button Styling (All Pages) */
+button, .back-button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#clickMeButton, #yesButton, .back-button {
+    background-color: #ff6f61;
+    color: #fff;
+}
+
+#noButton {
+    background-color: #a8e6cf;
+    color: #333;
+    position: static; /* Reset position for second page */
+}
+
+button:hover, .back-button:hover {
+    transform: scale(1.05);
+}
+
+#clickMeButton:hover, #yesButton:hover, .back-button:hover {
+    background-color: #ff4a3d;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 500px; /* Reduced from 600px */
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    box-shadow: 0 0 25px rgba(255, 111, 97, 0.2);
+}
+
+/* Slides */
+.slide {
+    display: none;
+    text-align: center;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 50vh; /* Reduced from 60vh */
+    border-radius: 12px;
+    object-fit: contain;
+    border: 3px solid white;
+}
+
+/* Caption Styling */
+.caption {
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+    color: #ff6f61;
+    margin: 15px 0;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+/* Navigation Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 12px;
+    color: #ff6f61;
+    font-size: 1.8rem;
+    font-weight: bold;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Play Button */
+#playMusicButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(255, 111, 97, 0.3);
+}
+
+/* Back Button Fix */
+.back-button {
+    margin: 40px auto !important;
+    padding: 18px 45px !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* styles.css */
+/* INDEX PAGE SPECIFIC ADJUSTMENTS */
+
+/* Make header bigger */
+.index-page .main-header {
+    font-size: 6rem !important; /* 4rem → 5rem */
+    margin: 0 0 40px 0 !important; /* Increased bottom margin */
+}
+
+/* Enlarge image */
+.index-page .romantic-image {
+    max-width: 650px !important; /* 300px → 400px */
+    border-width: 5px !important; /* Thicker border */
+}
+
+/* Bigger "Click Me!" button */
+#clickMeButton {
+    font-family: 'Dancing Script', cursive !important; /* Romantic font */
+    font-size: 1.8rem !important; /* Slightly larger text */
+    letter-spacing: 1px; /* Better cursive readability */
+    padding: 18px 50px !important; /* Adjusted padding for cursive */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Matching header style */
+    transition: all 0.3s ease !important;
+}
+
+#clickMeButton {
+    font-family: 'Dancing Script', cursive !important; /* Romantic font */
+    font-size: 1.8rem !important; /* Slightly larger text */
+    letter-spacing: 1px; /* Better cursive readability */
+    padding: 18px 50px !important; /* Adjusted padding for cursive */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Matching header style */
+    transition: all 0.3s ease !important;
+}
+/* GLOBAL STYLES (keep existing but add .index-page context) */
+body.index-page .content {
+    gap: 40px !important; /* Increased spacing between elements */
+}
+
+/* Add these to your existing styles.css */
+
+/* Second Page Proposal Text */
+.proposal-text {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 2rem;
+    color: #fff;
+    margin: 30px 20px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Second Page Buttons */
+#yesButton, #noButton {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    padding: 18px 50px;
+    margin: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#yesButton {
+    background-color: #ff6f61 !important; 
+}
+
+#noButton {
+    background-color: #a8e6cf !important;
+}
+
+/* Update existing #surpriseButton rules */
+#surpriseButton {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 1.8rem;
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 18px 45px;
+    margin-top: 30px;
+    /* REMOVED display: none from here */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Keep existing .hidden class */
+.hidden {
+    display: none;
+}
+#surpriseButton:hover {
+    background-color: #ff4a3d;
+    transform: scale(1.05);
+}
